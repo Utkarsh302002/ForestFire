@@ -22,4 +22,4 @@ After re-ordering Number of forest fires by month
 After re-ordering Number of forest fires by weekdays
 ![image](https://user-images.githubusercontent.com/93579606/178116882-f6e5be89-a73e-4228-a842-b626d9fe49d2.png)
 
-Many more.
+### Many more.
