@@ -81,6 +81,7 @@ f <- f %>%
   mutate(month = factor(month, c("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"))) %>%
   mutate(day = factor(day, c("mon", "tue", "wed", "thu", "fri", "sat", "sun")))
 
+#### During which months are forest fires most common?
 ###After Re-ordering Number of forest fires by month
 fireinmonths <- f %>%
   group_by(month) %>%
@@ -92,6 +93,7 @@ ggplot(fireinmonths) +
   labs(title = "Number of fires occurred in each month", x = "Month", y = "Number fires") + 
   theme(panel.background = element_rect(fill = "white"))
 
+######On which days of the week are forest fires most common?
 ##########After Re-ordering Number of forest fires by a week-day
 fireindays <- f %>%
   group_by(day) %>%
@@ -103,6 +105,7 @@ ggplot(fireindays) +
   labs(title = "Number of fires occurred by each day", x = "Day of the week", y = "Number of s fires") + 
   theme(panel.background = element_rect(fill = "white"))
 
+#####What are the causes of forestfires?
 ########Box plots of independent var. by month
 create_box_by_month <- function(x, y) {
   ggplot(f) +
@@ -129,7 +132,7 @@ Y_var <- c("FFMC", "DMC","DC", "ISI", "temp", "RH", "wind", "rain")
 
 map2(X_var, Y_var, create_box_by_day)
 
-
+##### Which variables are related to forest fire severity?
 #########
 create_scatter <- function(x,y){
   ggplot(data = f) +
@@ -142,7 +145,7 @@ X_scat <- c("FFMC", "DMC","DC", "ISI", "temp", "RH", "wind", "rain")
 
 map2(X_scat, Y_scat, create_scatter)
 
-### plot a histogram quickly:
+#### plot a histogram quickly:
 ggplot(f)+
   aes(area) +
   geom_histogram(bins = 20)
