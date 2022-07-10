@@ -75,14 +75,14 @@ ggplot(fireindays) +
   theme(panel.background = element_rect(fill = "white"))
 
 
-#####Re-ordering months for easier readability
+#### Re-ordering months for easier readability
 
 f <- f %>%
   mutate(month = factor(month, c("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"))) %>%
   mutate(day = factor(day, c("mon", "tue", "wed", "thu", "fri", "sat", "sun")))
 
-#### During which months are forest fires most common?
-###After Re-ordering Number of forest fires by month
+### During which months are forest fires most common?
+### After Re-ordering Number of forest fires by month
 fireinmonths <- f %>%
   group_by(month) %>%
   summarize(count = n())
@@ -93,8 +93,8 @@ ggplot(fireinmonths) +
   labs(title = "Number of fires occurred in each month", x = "Month", y = "Number fires") + 
   theme(panel.background = element_rect(fill = "white"))
 
-######On which days of the week are forest fires most common?
-##########After Re-ordering Number of forest fires by a week-day
+### On which days of the week are forest fires most common?
+### After Re-ordering Number of forest fires by a week-day
 fireindays <- f %>%
   group_by(day) %>%
   summarize(count_weekday = n())
