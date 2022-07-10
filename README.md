@@ -4,6 +4,12 @@ This is a Exploratory Data Analysis (EDA) on dataset ForestFires of Montesinho N
 This is a short preliminary data analysis document exploring the relation between forest fires occurred and various temporal and environmental 
 variables based on which one can get an idea to further investigate the causes of forest fires in portugal.
 
+packages to be installed for running the code:-
+library("readr")
+library("dplyr")
+library("ggplot2")
+library("purrr")
+
 ### Number of forest fires by month
 ![image](https://user-images.githubusercontent.com/93579606/178116674-4a503d7e-e34c-4905-a371-342978e73b7b.png)
 
